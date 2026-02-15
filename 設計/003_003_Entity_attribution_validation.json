@@ -1,738 +1,755 @@
 ﻿{
   "description": "エンティティ・アトリビューション一覧。各エンティティとそのアトリビューションを定義する。",
   "entities": {
-    "Raw-Event": {
-        "Event-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "RE-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Event-Type-ID": {
-          "relatedTo": "Event_Type.Event_Type_ID"
+    "rawEvent": {
+      "eventId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "RE-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
       },
-        "Sheet": {
-          "isPrimaryKey": false,
-          "dataType": "worksheet",
-          "validation": {
-            "AcceptNothing": false,
-            "AcceptMultiple": false
-          }
-        },
-        "ListObject": {
-          "isPrimaryKey": false,
-          "dataType": "listobject",
-          "validation": {
-            "AcceptNothing": false,
-            "AcceptMultiple": false
-          }
-        },
-        "Target": {
-          "isPrimaryKey": false,
-          "dataType": "range",
-          "validation": {
-            "AcceptNothing": false,
-            "AcceptMultiple": true
-          }
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
+      "eventTypeId": {
+        "relatedTo": "eventType.eventTypeId"
+      },
+      "sheet": {
+        "isPrimaryKey": false,
+        "dataType": "worksheet",
+        "validation": {
+          "acceptNothing": false,
+          "acceptMultiple": false
         }
-    },
-    "Event-Type": {
-        "Event-Type-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "ET-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Event-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": [" "]
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+      },
+      "listObject": {
+        "isPrimaryKey": false,
+        "dataType": "listobject",
+        "validation": {
+          "acceptNothing": false,
+          "acceptMultiple": false
         }
-    },
-    "National-Holidays": {
-        "Date": {
-          "isPrimaryKey": true,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "2025/01/01",
-            "max": "2099/12/31"
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+      },
+      "target": {
+        "isPrimaryKey": false,
+        "dataType": "range",
+        "validation": {
+          "acceptNothing": false,
+          "acceptMultiple": true
         }
-    },
-    "Company-Holidays": {
-        "Date": {
-          "isPrimaryKey": true,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "2025/01/01",
-            "max": "2099/12/31"
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
         }
+      }
     },
-    "Personal-Holidays": {
-        "Date": {
-          "isPrimaryKey": true,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "2025/01/01",
-            "max": "2099/12/31"
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+    "eventType": {
+      "eventTypeId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "ET-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
         }
-    },
-    "Non-personal-Holidays": {
-        "Date": {
-          "unionOf": "National-Holidays.Date,Company-Holidays.Date"
-          }
-    },
-    "All-the-Holidays": {
-        "Date": {
-          "unionOf": "Non-personal-Holidays.Date,Personal-Holidays.Date"
-          }
-    },
-    "Client": {
-        "Client-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "CL-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Client-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
+      },
+      "eventName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
         }
-    },
-    "Campaign": {
-        "Campaign-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "CP-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Campaign-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Client-ID": {
-          "relatedTo": "Client.CLient-ID"
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
         }
+      }
     },
-    "Milestone": {
-        "Milestone-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "MS-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Milestone-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Campaign-ID": {
-          "relatedTo": "Campaign.Campaign-ID"
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
+    "nationalHolidays": {
+      "date": {
+        "isPrimaryKey": true,
+        "dataType": "date",
+        "validation": {
+          "acceptDuplicate": false,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd",
+          "min": "2025/01/01",
+          "max": "2099/12/31"
         }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
+        }
+      }
     },
-    "To-Do-Type": {
-        "To-Do-Type-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "TD-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "To-Do-Type-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+    "companyHolidays": {
+      "date": {
+        "isPrimaryKey": true,
+        "dataType": "date",
+        "validation": {
+          "acceptDuplicate": false,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd",
+          "min": "2025/01/01",
+          "max": "2099/12/31"
         }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
+        }
+      }
     },
-    "Priority": {
-        "Priority-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "PR-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Priority-Tag": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Description": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": true,
-            "MinLength": 0,
-            "MaxLength": 200,
-            "AvoidChars": []
-          }
+    "personalHolidays": {
+      "date": {
+        "isPrimaryKey": true,
+        "dataType": "date",
+        "validation": {
+          "acceptDuplicate": false,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd",
+          "min": "2025/01/01",
+          "max": "2099/12/31"
         }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
+        }
+      }
     },
-    "Basic-To-Do": {
-        "Basic-To-Do-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "BT-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "To-Do-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Scheduled-Execution-Date": {
-          "isPrimaryKey": false,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "2025/01/01",
-            "max": "2099/12/31"
-          }
-        },
-        "Scheduled-Execution-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Deadline-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": true,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
-        },
-        "Estimated-Executional-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Scheduled-Resttime-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Actual-Beginning-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Actual-Finish-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
-        },
-        "Milestone-ID": {
-          "relatedTo": "Milestone.Milestone-ID"
-        },
-        "To-Do-Type-ID": {
-          "relatedTo": "To-Do-Type.To-Do-Type-ID"
-        },
-        "Priority-ID": {
-          "relatedTo": "Priority.Priority-ID"
-        }
+    "nonPersonalHolidays": {
+      "date": {
+        "unionOf": "nationalHolidays.date,companyHolidays.date"
+      }
     },
-    "Repeat-To-Do-Prototype": {
-        "Rep-Prototype-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "RP-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "Default-To-Do-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Default-Scheduled-Execution-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Default-Span-until-Deadline": {
-          "isPrimaryKey": false,
-          "dataType": "number",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": true,
-            "min": 0,
-            "max": 365
-          }
-        },
-        "Default-Estimated-Executional-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Default-Scheduled-Resttime-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
-        },
-        "Default-Milestone-ID": {
-          "relatedTo": "Milestone.Milestone-ID"
-        },
-        "Default-To-Do-Type-ID": {
-          "relatedTo": "To-Do-Type.To-Do-Type-ID"
-        },
-        "Default-Priority-ID": {
-          "relatedTo": "Priority.Priority-ID"
-        }
+    "allTheHolidays": {
+      "date": {
+        "unionOf": "nonPersonalHolidays.date,personalHolidays.date"
+      }
     },
-    "Repeat-To-Do-Instance": {
-        "Rep-Instance-ID": {
-          "isPrimaryKey": true,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": false,
-            "Format": "RI-000000",
-            "AcceptEmpty": false,
-            "MinLength": 7,
-            "MaxLength": 7,
-            "AvoidChars": []
-          }
-        },
-        "To-Do-Name": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "undefined",
-            "AcceptEmpty": false,
-            "MinLength": 1,
-            "MaxLength": 50,
-            "AvoidChars": []
-          }
-        },
-        "Scheduled-Execution-Date": {
-          "isPrimaryKey": false,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "2025/01/01",
-            "max": "2099/12/31"
-          }
-        },
-        "Scheduled-Execution-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Deadline-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": true,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
-        },
-        "Estimated-Executional-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Scheduled-Resttime-Duration": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Actual-Beginning-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Actual-Finish-Time": {
-          "isPrimaryKey": false,
-          "dataType": "time",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "HH:mm:ss",
-            "min": "00:00:00",
-            "max": "23:59:59"
-          }
-        },
-        "Generation-Date-and-Time": {
-          "isPrimaryKey": false,
-          "dataType": "datetime",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd HH:mm:ss",
-            "minDate": "2025/01/01",
-            "maxDate": "2099/12/31",
-            "minTime": "00:00:00",
-            "maxTime": "23:59:59"
-          }
-        },
-        "IsUnique": {
-          "isPrimaryKey": false,
-          "dataType": "boolean",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false
-          }
-        },
-        "Rep-Prototype-ID": {
-          "relatedTo": "Repeat-To-Do-Prototype.Rep-Prototype-ID"
-        },
-        "Milestone-ID": {
-          "relatedTo": "Milestone.Milestone-ID"
-        },
-        "To-Do-Type-ID": {
-          "relatedTo": "To-Do-Type.To-Do-Type-ID"
-        },
-        "Priority-ID": {
-          "relatedTo": "Priority.Priority-ID"
+    "client": {
+      "clientId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "CL-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
         }
+      },
+      "clientName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      }
+    },
+    "campaign": {
+      "campaignId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "CP-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "campaignName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "clientId": {
+        "relatedTo": "client.clientId"
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      }
+    },
+    "milestone": {
+      "milestoneId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "MS-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "milestoneName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "campaignId": {
+        "relatedTo": "campaign.campaignId"
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      }
+    },
+    "toDoType": {
+      "toDoTypeId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "TD-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "toDoTypeName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
+        }
+      }
+    },
+    "priority": {
+      "priorityId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "PR-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "priorityTag": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+             " "
+           ]
+        }
+      },
+      "description": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": true,
+          "minLength": 0,
+          "maxLength": 200,
+          "avoidChars": []
+        }
+      }
+    },
+    "basicToDo": {
+      "basicToDoId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "BT-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "toDoName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "scheduledExecutionDate": {
+        "isPrimaryKey": false,
+        "dataType": "date",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd",
+          "min": "2025/01/01",
+          "max": "2099/12/31"
+        }
+      },
+      "scheduledExecutionTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "deadlineDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": true,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      },
+      "estimatedExecutionalDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "scheduledResttimeDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "actualBeginningTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "actualFinishTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      },
+      "milestoneId": {
+        "relatedTo": "milestone.milestoneId"
+      },
+      "toDoTypeId": {
+        "relatedTo": "toDoType.toDoTypeId"
+      },
+      "priorityId": {
+        "relatedTo": "priority.priorityId"
+      }
+    },
+    "repeatToDoPrototype": {
+      "repPrototypeId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "RP-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "defaultToDoName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "defaultScheduledExecutionTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "defaultSpanUntilDeadline": {
+        "isPrimaryKey": false,
+        "dataType": "number",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": true,
+          "min": 0,
+          "max": 365
+        }
+      },
+      "defaultEstimatedExecutionalDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "defaultScheduledResttimeDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      },
+      "defaultMilestoneId": {
+        "relatedTo": "milestone.milestoneId"
+      },
+      "defaultToDoTypeId": {
+        "relatedTo": "toDoType.toDoTypeId"
+      },
+      "defaultPriorityId": {
+        "relatedTo": "priority.priorityId"
+      }
+    },
+    "repeatToDoInstance": {
+      "repInstanceId": {
+        "isPrimaryKey": true,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": false,
+          "format": "RI-000000",
+          "acceptEmpty": false,
+          "minLength": 9,
+          "maxLength": 9,
+          "avoidChars": []
+        }
+      },
+      "toDoName": {
+        "isPrimaryKey": false,
+        "dataType": "string",
+        "validation": {
+          "acceptDuplicate": true,
+          "format": "undefined",
+          "acceptEmpty": false,
+          "minLength": 1,
+          "maxLength": 50,
+          "avoidChars": [
+            " "
+          ]
+        }
+      },
+      "scheduledExecutionDate": {
+        "isPrimaryKey": false,
+        "dataType": "date",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd",
+          "min": "2025/01/01",
+          "max": "2099/12/31"
+        }
+      },
+      "scheduledExecutionTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "deadlineDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": true,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      },
+      "estimatedExecutionalDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "scheduledResttimeDuration": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "actualBeginningTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "actualFinishTime": {
+        "isPrimaryKey": false,
+        "dataType": "time",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "HH:mm:ss",
+          "min": "00:00:00",
+          "max": "23:59:59"
+        }
+      },
+      "generationDateAndTime": {
+        "isPrimaryKey": false,
+        "dataType": "datetime",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false,
+          "format": "yyyy/mm/dd HH:mm:ss",
+          "minDate": "2025/01/01",
+          "maxDate": "2099/12/31",
+          "minTime": "00:00:00",
+          "maxTime": "23:59:59"
+        }
+      },
+      "isUnique": {
+        "isPrimaryKey": false,
+        "dataType": "boolean",
+        "validation": {
+          "acceptDuplicate": true,
+          "acceptNull": false
+        }
+      },
+      "repPrototypeId": {
+        "relatedTo": "repeatToDoPrototype.repPrototypeId"
+      },
+      "milestoneId": {
+        "relatedTo": "milestone.milestoneId"
+      },
+      "toDoTypeId": {
+        "relatedTo": "toDoType.toDoTypeId"
+      },
+      "priorityId": {
+        "relatedTo": "priority.priorityId"
+      }
     }
   }
 }
-
