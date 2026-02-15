@@ -1,4 +1,4 @@
-option explicit
+Option Explicit
 
 public sub main()
     dim myString as string
