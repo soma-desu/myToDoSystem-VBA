@@ -35,28 +35,64 @@
          1. タスク追加
          2. クエリ更新
       2. 今日のToDoテーブル
-         1. done列
-         2. edit列
-         3. duplicate列
-         4. delete列
+         1. campaignName列
+         2. milestoneName列
+         3. toDoName列
+         4. toDoTypeName列
+         5. scheduledExecutionTime列
+         6. estimatedExecutionalDuration列
+         7. scheduledResttimeDuration列
+         8. deadlineDateAndTime列
+         9. actualBeginningTime列
+         10. actualFinishTime列
+         11. priority列
+         12. scheduledExecutionDate列
+         13. done列
+         14. edit列
+         15. duplicate列
+         16. delete列
    4. 明日のToDo
       1. 明日の日付テーブル
          1. タスク追加
          2. クエリ更新
       2. 明日のToDoテーブル
-         1. done列
-         2. edit列
-         3. duplicate列
-         4. delete列
+         1. campaignName列
+         2. milestoneName列
+         3. toDoName列
+         4. toDoTypeName列
+         5. scheduledExecutionTime列
+         6. estimatedExecutionalDuration列
+         7. scheduledResttimeDuration列
+         8. deadlineDateAndTime列
+         9. actualBeginningTime列
+         10. actualFinishTime列
+         11. priority列
+         12. scheduledExecutionDate列
+         13. done列
+         14. edit列
+         15. duplicate列
+         16. delete列
    5. 特定の日のToDo
       1. 特定の日付テーブル
          1. タスク追加
          2. クエリ更新
       2. 特定の日のToDoテーブル
-         1. done列
-         2. edit列
-         3. duplicate列
-         4. delete列
+         1. campaignName列
+         2. milestoneName列
+         3. toDoName列
+         4. toDoTypeName列
+         5. scheduledExecutionTime列
+         6. estimatedExecutionalDuration列
+         7. scheduledResttimeDuration列
+         8. deadlineDateAndTime列
+         9. actualBeginningTime列
+         10. actualFinishTime列
+         11. priority列
+         12. scheduledExecutionDate列
+         13. done列
+         14. edit列
+         15. duplicate列
+         16. delete列
 
 
 
