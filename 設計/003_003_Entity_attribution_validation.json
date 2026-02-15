@@ -14,7 +14,9 @@
             "AvoidChars": []
           }
         },
-        "Event-Type-ID": "Event_Type.Event_Type_ID",
+        "Event-Type-ID": {
+          "relatedTo": "Event_Type.Event_Type_ID"
+      },
         "Sheet": {
           "isPrimaryKey": false,
           "dataType": "worksheet",
@@ -61,8 +63,8 @@
             "acceptDuplicate": true,
             "Format": "ET-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -71,11 +73,11 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
+            "MinLength": 1,
+            "MaxLength": 50,
+            "AvoidChars": [" "]
           }
         },
         "Description": {
@@ -83,10 +85,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": true,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
@@ -99,8 +101,8 @@
             "acceptDuplicate": true,
             "acceptNull": false,
             "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+            "min": "2025/01/01",
+            "max": "2099/12/31"
           }
         },
         "Description": {
@@ -108,10 +110,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": true,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
@@ -124,8 +126,8 @@
             "acceptDuplicate": true,
             "acceptNull": false,
             "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+            "min": "2025/01/01",
+            "max": "2099/12/31"
           }
         },
         "Description": {
@@ -133,10 +135,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": true,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
@@ -149,8 +151,8 @@
             "acceptDuplicate": true,
             "acceptNull": false,
             "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+            "min": "2025/01/01",
+            "max": "2099/12/31"
           }
         },
         "Description": {
@@ -158,39 +160,23 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": true,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
     },
     "Non-personal-Holidays": {
         "Date": {
-          "isPrimaryKey": true,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+          "unionOf": "National-Holidays.Date,Company-Holidays.Date"
           }
-        }
     },
     "All-the-Holidays": {
         "Date": {
-          "isPrimaryKey": true,
-          "dataType": "date",
-          "validation": {
-            "acceptDuplicate": true,
-            "acceptNull": false,
-            "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+          "unionOf": "Non-personal-Holidays.Date,Personal-Holidays.Date"
           }
-        }
     },
     "Client": {
         "Client-ID": {
@@ -198,10 +184,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "CL-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -210,10 +196,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -237,10 +223,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "CP-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -249,24 +235,15 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
         "Client-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Client.CLient-ID"
         },
         "Generation-Date-and-Time": {
           "isPrimaryKey": false,
@@ -288,10 +265,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "MS-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -300,24 +277,15 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
         "Campaign-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Campaign.Campaign-ID"
         },
         "Generation-Date-and-Time": {
           "isPrimaryKey": false,
@@ -339,10 +307,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "TD-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -351,10 +319,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -363,10 +331,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "Format": "undefined",
+            "AcceptEmpty": true,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
@@ -377,10 +345,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "PR-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -389,10 +357,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -401,10 +369,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "Format": "undefined",
+            "AcceptEmpty": true,
+            "MinLength": 0,
+            "MaxLength": 200,
             "AvoidChars": []
           }
         }
@@ -415,10 +383,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "BT-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -427,10 +395,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -441,8 +409,8 @@
             "acceptDuplicate": true,
             "acceptNull": false,
             "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+            "min": "2025/01/01",
+            "max": "2099/12/31"
           }
         },
         "Scheduled-Execution-Time": {
@@ -475,8 +443,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Scheduled-Resttime-Duration": {
@@ -485,8 +454,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Actual-Beginning-Time": {
@@ -525,40 +495,13 @@
           }
         },
         "Milestone-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Milestone.Milestone-ID"
         },
         "To-Do-Type-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "To-Do-Type.To-Do-Type-ID"
         },
         "Priority-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Priority.Priority-ID"
         }
     },
     "Repeat-To-Do-Prototype": {
@@ -567,10 +510,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "RP-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -579,10 +522,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -604,7 +547,7 @@
             "acceptDuplicate": true,
             "acceptNull": true,
             "min": 0,
-            "max": 0
+            "max": 365
           }
         },
         "Default-Estimated-Executional-Duration": {
@@ -613,8 +556,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Default-Scheduled-Resttime-Duration": {
@@ -623,8 +567,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Generation-Date-and-Time": {
@@ -641,40 +586,13 @@
           }
         },
         "Default-Milestone-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Milestone.Milestone-ID"
         },
         "Default-To-Do-Type-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "To-Do-Type.To-Do-Type-ID"
         },
         "Default-Priority-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Priority.Priority-ID"
         }
     },
     "Repeat-To-Do-Instance": {
@@ -683,10 +601,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": false,
-            "Format": "",
+            "Format": "RI-000000",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 7,
+            "MaxLength": 7,
             "AvoidChars": []
           }
         },
@@ -695,10 +613,10 @@
           "dataType": "string",
           "validation": {
             "acceptDuplicate": true,
-            "Format": "",
+            "Format": "undefined",
             "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
+            "MinLength": 1,
+            "MaxLength": 50,
             "AvoidChars": []
           }
         },
@@ -709,8 +627,8 @@
             "acceptDuplicate": true,
             "acceptNull": false,
             "format": "yyyy/mm/dd",
-            "min": "undefined",
-            "max": "undefined"
+            "min": "2025/01/01",
+            "max": "2099/12/31"
           }
         },
         "Scheduled-Execution-Time": {
@@ -743,8 +661,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Scheduled-Resttime-Duration": {
@@ -753,8 +672,9 @@
           "validation": {
             "acceptDuplicate": true,
             "acceptNull": false,
-            "min": 0,
-            "max": 0
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
           }
         },
         "Actual-Beginning-Time": {
@@ -800,53 +720,17 @@
             "acceptNull": false
           }
         },
-        "RepPrototype-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+        "Rep-Prototype-ID": {
+          "relatedTo": "Repeat-To-Do-Prototype.Rep-Prototype-ID"
         },
         "Milestone-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Milestone.Milestone-ID"
         },
         "To-Do-Type-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "To-Do-Type.To-Do-Type-ID"
         },
         "Priority-ID": {
-          "isPrimaryKey": false,
-          "dataType": "string",
-          "validation": {
-            "acceptDuplicate": true,
-            "Format": "",
-            "AcceptEmpty": false,
-            "MinLength": "undefined",
-            "MaxLength": 0,
-            "AvoidChars": []
-          }
+          "relatedTo": "Priority.Priority-ID"
         }
     }
   }
