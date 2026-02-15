@@ -1,467 +1,796 @@
-{
+﻿{
   "description": "エンティティ・アトリビューション一覧。各エンティティとそのアトリビューションを定義する。",
   "entities": {
     "Raw Event": {
         "Event ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Event Type ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Sheet": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "object",
-          "validation": ""
+          "dataType": "worksheet",
+          "validation": {
+            "AcceptNothing": false,
+            "AcceptMultiple": false
+          }
         },
         "ListObject": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "object",
-          "validation": ""
+          "dataType": "listobject",
+          "validation": {
+            "AcceptNothing": false,
+            "AcceptMultiple": false
+          }
         },
         "Target": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "object",
-          "validation": ""
+          "dataType": "range",
+          "validation": {
+            "AcceptNothing": false,
+            "AcceptMultiple": true
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         }
     },
     "Event Type": {
         "Event Type ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Event Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": true,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "National Holidays": {
         "Date": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": true,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Company Holidays": {
         "Date": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": true,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Personal Holidays": {
         "Date": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": true,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Non-personal Holidays": {
         "Date": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         }
     },
     "All the Holidays": {
         "Date": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         }
     },
     "Client": {
         "Client ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Client Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         }
     },
     "Campaign": {
         "Campaign ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Campaign Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Client ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         }
     },
     "Milestone": {
         "Milestone ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Milestone Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Campaign ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         }
     },
     "To Do Type": {
         "To Do Type ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "To Do Type Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Priority": {
         "Priority ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Priority Tag": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Description": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Basic To Do": {
         "Basic To Do ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "To Do Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Scheduled Execution Date": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         },
         "Scheduled Execution Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Deadline Date and Time": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": true,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         },
         "Estimated Executional Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Scheduled Resttime Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Actual Beginning Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Actual Finish Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         },
         "Milestone ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "To Do Type ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Priority ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Repeat To Do Prototype": {
         "Rep Prototype ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Default To Do Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Default Scheduled Execution Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Default Span until Deadline": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "number",
-          "validation": ""
+          "validation": {
+            "acceptNull": true,
+            "min": 0,
+            "max": 0
+          }
         },
         "Default Estimated Executional Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Default Scheduled Resttime Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         },
         "Default Milestone ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Default To Do Type ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Default Priority ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     },
     "Repeat To Do Instance": {
         "Rep Instance ID": {
           "isKey": true,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "To Do Name": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Scheduled Execution Date": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "date",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd",
+            "min": "undefined",
+            "max": "undefined"
+          }
         },
         "Scheduled Execution Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Deadline Date and Time": {
           "isKey": false,
-          "isRequired": false,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": true,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         },
         "Estimated Executional Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Scheduled Resttime Duration": {
           "isKey": false,
-          "isRequired": true,
-          "dataType": "number",
-          "validation": ""
+          "dataType": "time",
+          "validation": {
+            "acceptNull": false,
+            "min": 0,
+            "max": 0
+          }
         },
         "Actual Beginning Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Actual Finish Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "time",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "HH:mm:ss",
+            "min": "00:00:00",
+            "max": "23:59:59"
+          }
         },
         "Generation Date and Time": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "datetime",
-          "validation": ""
+          "validation": {
+            "acceptNull": false,
+            "format": "yyyy/mm/dd HH:mm:ss",
+            "minDate": "2025/01/01",
+            "maxDate": "2099/12/31",
+            "minTime": "00:00:00",
+            "maxTime": "23:59:59"
+          }
         },
         "IsUnique": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "boolean",
-          "validation": ""
+          "validation": {
+            "acceptNull": false
+          }
         },
         "RepPrototype ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Milestone ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "To Do Type ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         },
         "Priority ID": {
           "isKey": false,
-          "isRequired": true,
           "dataType": "string",
-          "validation": ""
+          "validation": {
+            "Format": "",
+            "AcceptEmpty": false,
+            "MinLength": "undefined",
+            "MaxLength": 0,
+            "AvoidChars": []
+          }
         }
     }
   }
 }
+
