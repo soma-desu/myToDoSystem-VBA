@@ -1,0 +1,4 @@
+<svg host="65bd71144e" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" width="1px" height="1px" viewBox="-0.5 -0.5 1 1" content="&lt;mxfile&gt;&lt;diagram id=&quot;qU7FiVEe_SQ3yIf43UFs&quot; name=&quot;ページ1&quot;&gt;dZFNE4IgEIZ/DXcFx+xsVpdOHjqToDIh6yCO1q9PAzPG4sLusx8vuyCSNuNJ07a+AOMS4YCNiBwQxmES7adrJg9HgjiypNKCObaCXDz5kuhoLxjvvEQDII1ofViAUrwwHqNaw+CnlSB91ZZWfAPygsotvQpmaksTvFv5mYuqXpTD2E18o8W90tArp4cwKd/Hhhu69HKDdjVlMHwhkiGSagBjrWZMuZyXu6zN1h3/RD/v1lyZHwWTsfaeHO8HSfYC&lt;/diagram&gt;&lt;/mxfile&gt;" style="background-color: rgb(255, 255, 255);">
+    <defs/>
+    <g/>
+</svg>
