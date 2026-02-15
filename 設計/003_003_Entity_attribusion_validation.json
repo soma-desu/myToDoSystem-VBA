@@ -1,0 +1,467 @@
+{
+  "description": "エンティティ・アトリビューション一覧。各エンティティとそのアトリビューションを定義する。",
+  "entities": {
+    "Raw Event": {
+        "Event ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Event Type ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Sheet": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "object",
+          "validation": ""
+        },
+        "ListObject": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "object",
+          "validation": ""
+        },
+        "Target": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "object",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        }
+    },
+    "Event Type": {
+        "Event Type ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Event Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "National Holidays": {
+        "Date": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Company Holidays": {
+        "Date": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Personal Holidays": {
+        "Date": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Non-personal Holidays": {
+        "Date": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        }
+    },
+    "All the Holidays": {
+        "Date": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        }
+    },
+    "Client": {
+        "Client ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Client Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        }
+    },
+    "Campaign": {
+        "Campaign ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Campaign Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Client ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        }
+    },
+    "Milestone": {
+        "Milestone ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Milestone Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Campaign ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        }
+    },
+    "To Do Type": {
+        "To Do Type ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "To Do Type Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Priority": {
+        "Priority ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Priority Tag": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Description": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Basic To Do": {
+        "Basic To Do ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "To Do Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Scheduled Execution Date": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        },
+        "Scheduled Execution Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Deadline Date and Time": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "datetime",
+          "validation": ""
+        },
+        "Estimated Executional Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Scheduled Resttime Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Actual Beginning Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Actual Finish Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        },
+        "Milestone ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "To Do Type ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Priority ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Repeat To Do Prototype": {
+        "Rep Prototype ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Default To Do Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Default Scheduled Execution Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Default Span until Deadline": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Default Estimated Executional Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Default Scheduled Resttime Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        },
+        "Default Milestone ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Default To Do Type ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Default Priority ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        }
+    },
+    "Repeat To Do Instance": {
+        "Rep Instance ID": {
+          "isKey": true,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "To Do Name": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Scheduled Execution Date": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "date",
+          "validation": ""
+        },
+        "Scheduled Execution Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Deadline Date and Time": {
+          "isKey": false,
+          "isRequired": false,
+          "dataType": "datetime",
+          "validation": ""
+        },
+        "Estimated Executional Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Scheduled Resttime Duration": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "number",
+          "validation": ""
+        },
+        "Actual Beginning Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Actual Finish Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "time",
+          "validation": ""
+        },
+        "Generation Date and Time": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "datetime",
+          "validation": ""
+        },
+        "IsUnique": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "boolean",
+          "validation": ""
+        },
+        "RepPrototype ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Milestone ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "To Do Type ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        },
+        "Priority ID": {
+          "isKey": false,
+          "isRequired": true,
+          "dataType": "string",
+          "validation": ""
+        }
+    }
+  }
+}
