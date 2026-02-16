@@ -1,263 +1,267 @@
 {
     "description": "機能やIOを定義します",
     "methodBundle": {
-        "toDoの基本管理機能": {
-            "name": "",
-            "description": "",
+        "basicManagementOfToDo": {
+            "description": "ToDoの基本管理機能を提供します",
             "methods": [
                 {
-                    "name": "addBasicToDo",
-                    "description": "新規BasicToDoの追加"
+                    "addBasicToDo": "新規BasicToDoの追加"
                 },
                 {
-                    "name": "editBasicToDo",
-                    "description": "既存BasicToDoの編集"
+                    "editBasicToDo": "既存BasicToDoの編集"
                 },
                 {
-                    "name": "deleteBasicToDo",
-                    "description": "既存BasicToDoの削除"
+                    "doneBasicToDo": "既存BasicToDoの完了"
                 },
                 {
-                    "name": "addRepeatToDo",
-                    "description": "新規RepeatToDoの追加"
+                    "duplicateBasicToDo": "既存BasicToDoの複製"
                 },
                 {
-                    "name": "editRepeatToDo",
-                    "description": "既存RepeatToDoの編集"
+                    "deleteBasicToDo": "既存BasicToDoの削除"
                 },
                 {
-                    "name": "deleteRepeatToDo",
-                    "description": "既存RepeatToDoの削除"
+                    "addRepeatToDo": "新規RepeatToDoの追加"
+                },
+                {
+                    "editRepeatToDo": "既存RepeatToDoの編集"
+                },
+                {
+                    "doneRepeatToDo": "既存RepeatToDoの完了"
+                },
+                {
+                    "duplicateRepeatToDo": "既存RepeatToDoの複製"
+                },
+                {
+                    "deleteRepeatToDo": "既存RepeatToDoの削除"
                 }
             ]
         },
-        "今日のToDo一覧表示": {
-            "name": "",
-            "description": "",
+        "displayTodayToDoList": {
+            "description": "今日のToDo一覧を表示します",
             "methods": [
                 {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
+                    "displayTodayToDoList": "今日のToDo一覧を表示します"
                 }
             ]
         },
-        "明日のToDo一覧表示": {
-            "name": "",
-            "description": "",
+        "displayTomorrowToDoList": {
+            "description": "明日のToDo一覧を表示します",
             "methods": [
                 {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
+                    "displayTomorrowToDoList": "明日のToDo一覧を表示します"
                 }
             ]
         },
-        "特定の日のToDo一覧表示": {
-            "name": "",
-            "description": "",
+        "displaySpecificDayToDoList": {
+            "description": "特定の日のToDo一覧を表示します",
             "methods": [
                 {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
+                    "displaySpecificDayToDoList": "特定の日のToDo一覧を表示します"
                 }
             ]
         },
-        "2週間分のToDo実行予定カレンダー表示": {
-            "name": "",
-            "description": "",
+        "displayTwoWeekToDoScheduleCalendar": {
+            "description": "2週間分のToDo実行予定カレンダーを表示します",
             "methods": [
                 {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
+                    "displayTwoWeekToDoScheduleCalendar": "2週間分のToDo実行予定カレンダーを表示します"
                 }
             ]
         },
-        "日別の実行済みタスクの実所要時間のMilestone別集計と表示": {
-            "name": "",
-            "description": "",
+        "displayDailyExecutedTaskTimeOfMilestone": {
+            "description": "1か月分の日別実行済みタスクの実所要時間のMilestone別集計と表示します",
             "methods": [
                 {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
-                },
-                {
-                    "name": "",
-                    "description": ""
+                    "displayDailyExecutedTaskTimeOfMilestone": "1か月分の日別実行済みタスクの実所要時間のMilestone別集計と表示します"
                 }
             ]
         }
+    },
+    "ioBundle": {
+        "inputPlaces":{
+            "executedTaskConfirmationSheet": {
+                "criteriaTable": {
+                    "queryUpdateCell": {
+                        "description": "クエリ更新",
+                        "acceptEvent": ["doubleClick"],
+                        "acceptMethod": ["displayDailyExecutedTaskTimeOfMilestone"]
+                    }
+                }
+            },
+            "twoWeekScheduleConfirmationSheet": {
+                "criteriaTable": {
+                    "queryUpdateCell": {
+                        "description": "クエリ更新",
+                        "acceptEvent": ["doubleClick"],
+                        "acceptMethod": ["displayTwoWeekToDoScheduleCalendar"]
+                    }
+                }
+            },
+            "todayToDoSheet": {
+                "criteriaTable": {
+                    "queryUpdateCell": {
+                        "description": "クエリ更新",
+                        "acceptEvent": ["doubleClick"],
+                        "acceptMethod": ["displayTodayToDoList"]
+                    },
+                    "addNewToDoCell": {
+                        "description": "新規ToDo追加",
+                        "acceptEvent": ["doubleClick"],
+                        "acceptMethod": ["addBasicToDo", "addRepeatToDo"]
+                    }
+                },
+                "toDoTable": {
+                    "campaignNameColumn": {
+                        "description": "campaignName列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "milestoneNameColumn": {
+                        "description": "milestoneName列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "toDoNameColumn": {
+                        "description": "toDoName列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "toDoTypeNameColumn": {
+                        "description": "toDoTypeName列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "scheduledExecutionTimeColumn": {
+                        "description": "scheduledExecutionTime列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "estimatedExecutionalDurationColumn": {
+                        "description": "estimatedExecutionalDuration列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "scheduledResttimeDurationColumn": {
+                        "description": "scheduledResttimeDuration列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "deadlineDateAndTimeColumn": {
+                        "description": "deadlineDateAndTime列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "actualBeginningTimeColumn": {
+                        "description": "actualBeginningTime列",
+                        "acceptEvent": ["doubleClick", "rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "actualFinishTimeColumn": {
+                        "description": "actualFinishTime列",
+                        "acceptEvent": ["doubleClick", "rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo", "doneBasicToDo", "doneRepeatToDo"]
+                    },
+                    "priorityColumn": {
+                        "description": "priority列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "scheduledExecutionDateColumn": {
+                        "description": "scheduledExecutionDate列",
+                        "acceptEvent": ["rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "editColumn": {
+                        "description": "edit列",
+                        "acceptEvent": ["doubleClick", "rewrite"],
+                        "acceptMethod": ["editBasicToDo", "editRepeatToDo"]
+                    },
+                    "duplicateColumn": {
+                        "description": "duplicate列",
+                        "acceptEvent": ["doubleClick", "rewrite"],
+                        "acceptMethod": ["duplicateBasicToDo", "duplicateRepeatToDo"]
+                    },
+                    "deleteColumn": {
+                        "description": "delete列",
+                        "acceptEvent": ["doubleClick", "rewrite"],
+                        "acceptMethod": ["deleteBasicToDo", "deleteRepeatToDo"]
+                    }
+                }
+            },
+            "nextWorkDayToDoSheet": { 
+                "sameAs": "todayToDoSheet" 
+            },
+            "specificDayToDoSheet": { 
+                "sameAs": "todayToDoSheet" 
+            }
+        },
+        "outputPlaces": {
+            "executedTaskConfirmationSheet": {
+                "executedTaskTable": {
+                    "columns": ["id", "name", "日付01", "日付02", "日付03", "日付04", "日付05", "日付06", "日付07", "日付08", "日付09", "日付10", "日付11", "日付12", "日付13", "日付14", "日付15", "日付16", "日付17", "日付18", "日付19", "日付20", "日付21", "日付22", "日付23", "日付24", "日付25", "日付26", "日付27", "日付28", "日付29", "日付30", "日付31"],
+                    "description": "ユーザーは、Client/Campaign/Milestoneの3種から、粒度を選択できます。id/nameは、ユーザーの選択した粒度によって決まります。"
+                }
+            },
+            "twoWeekScheduleConfirmationSheet": {
+                "day01ScheduleTable": {
+                    "columns": ["日付01_01", "日付01_02", "日付01_03", "日付01_04", "日付01_05", "日付01_06", "日付01_07", "日付01_08", "日付01_09", "日付01_10"],
+                    "description": "ある一日のタスクを幅10列のテーブルで視覚化します。行は6:00~23:55までを5分刻みで持っています。"
+                },
+                "day02ScheduleTable": {
+                    "columns": ["日付02_01", "日付02_02", "日付02_03", "日付02_04", "日付02_05", "日付02_06", "日付02_07", "日付02_08", "日付02_09", "日付02_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day03ScheduleTable": {
+                    "columns": ["日付03_01", "日付03_02", "日付03_03", "日付03_04", "日付03_05", "日付03_06", "日付03_07", "日付03_08", "日付03_09", "日付03_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day04ScheduleTable": {
+                    "columns": ["日付04_01", "日付04_02", "日付04_03", "日付04_04", "日付04_05", "日付04_06", "日付04_07", "日付04_08", "日付04_09", "日付04_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day05ScheduleTable": {
+                    "columns": ["日付05_01", "日付05_02", "日付05_03", "日付05_04", "日付05_05", "日付05_06", "日付05_07", "日付05_08", "日付05_09", "日付05_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day06ScheduleTable": {
+                    "columns": ["日付06_01", "日付06_02", "日付06_03", "日付06_04", "日付06_05", "日付06_06", "日付06_07", "日付06_08", "日付06_09", "日付06_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day07ScheduleTable": {
+                    "columns": ["日付07_01", "日付07_02", "日付07_03", "日付07_04", "日付07_05", "日付07_06", "日付07_07", "日付07_08", "日付07_09", "日付07_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day08ScheduleTable": {
+                    "columns": ["日付08_01", "日付08_02", "日付08_03", "日付08_04", "日付08_05", "日付08_06", "日付08_07", "日付08_08", "日付08_09", "日付08_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day09ScheduleTable": {
+                    "columns": ["日付09_01", "日付09_02", "日付09_03", "日付09_04", "日付09_05", "日付09_06", "日付09_07", "日付09_08", "日付09_09", "日付09_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                },
+                "day10ScheduleTable": {
+                    "columns": ["日付10_01", "日付10_02", "日付10_03", "日付10_04", "日付10_05", "日付10_06", "日付10_07", "日付10_08", "日付10_09", "日付10_10"],
+                    "description": "sameAs: day01ScheduleTable"
+                }
+            },
+            "todayToDoSheet": {
+                "todayToDoTable": {
+                    "columns": ["campaignName", "milestoneName", "toDoName", "toDoTypeName", "scheduledExecutionTime", "estimatedExecutionalDuration", "scheduledResttimeDuration", "deadlineDateAndTime", "actualBeginningTime", "actualFinishTime", "priority", "scheduledExecutionDate", "edit", "duplicate", "delete"],
+                    "description": "今日以前のToDoを表示します。"
+                }
+            },
+            "nextWorkDayToDoSheet": {
+                "nextWorkDayToDoTable": {
+                    "columns": ["campaignName", "milestoneName", "toDoName", "toDoTypeName", "scheduledExecutionTime", "estimatedExecutionalDuration", "scheduledResttimeDuration", "deadlineDateAndTime", "actualBeginningTime", "actualFinishTime", "priority", "scheduledExecutionDate", "edit", "duplicate", "delete"],
+                    "description": "次の就業日のToDoを表示します。"
+                }
+            },
+            "specificDayToDoSheet": {
+                "specificDayToDoTable": {
+                    "columns": ["campaignName", "milestoneName", "toDoName", "toDoTypeName", "scheduledExecutionTime", "estimatedExecutionalDuration", "scheduledResttimeDuration", "deadlineDateAndTime", "actualBeginningTime", "actualFinishTime", "priority", "scheduledExecutionDate", "edit", "duplicate", "delete"],
+                    "description": "特定日のToDoを表示します。"
+                }
+            }
+        }
     }
 }
-
-
-
-# Function Specification
-
-## 機能
-1. ToDoの基本管理機能
-    - 通常のToDo
-        - 新規ToDoの追加  
-        - 既存ToDoの編集  
-          - プロパティの編集
-          - 開始時間登録
-          - 終了時間登録/完了チェック
-        - ToDoの削除
-    - リピートのToDo
-        - 新規ToDoの追加  
-        - 既存ToDoの編集  
-          - プロパティの編集
-          - 開始時間登録
-          - 終了時間登録/完了チェック
-        - ToDoの削除
-2. 今日のToDo一覧表示
-3. 次の就業日のToDo一覧表示
-4. 特定の日のToDo一覧表示
-5. 2週間分のToDo実行予定カレンダー表示
-6. 日別の実行済みタスクの実所要時間のMilestone別集計と表示
-
-## IO
-1. Input
-   1. 実行済みタスク確認シート
-      1. 基準日テーブル
-         1. クエリ更新
-   2. 2週間スケジュール確認シート
-      1. 基準日テーブル
-         1. クエリ更新
-   3. 今日のToDo
-      1. 今日の日付テーブル
-         1. タスク追加
-         2. クエリ更新
-      2. 今日のToDoテーブル
-         1. campaignName列
-         2. milestoneName列
-         3. toDoName列
-         4. toDoTypeName列
-         5. scheduledExecutionTime列
-         6. estimatedExecutionalDuration列
-         7. scheduledResttimeDuration列
-         8. deadlineDateAndTime列
-         9. actualBeginningTime列
-         10. actualFinishTime列
-         11. priority列
-         12. scheduledExecutionDate列
-         13. done列
-         14. edit列
-         15. duplicate列
-         16. delete列
-   4. 明日のToDo
-      1. 明日の日付テーブル
-         1. タスク追加
-         2. クエリ更新
-      2. 明日のToDoテーブル
-         1. campaignName列
-         2. milestoneName列
-         3. toDoName列
-         4. toDoTypeName列
-         5. scheduledExecutionTime列
-         6. estimatedExecutionalDuration列
-         7. scheduledResttimeDuration列
-         8. deadlineDateAndTime列
-         9. actualBeginningTime列
-         10. actualFinishTime列
-         11. priority列
-         12. scheduledExecutionDate列
-         13. done列
-         14. edit列
-         15. duplicate列
-         16. delete列
-   5. 特定の日のToDo
-      1. 特定の日付テーブル
-         1. タスク追加
-         2. クエリ更新
-      2. 特定の日のToDoテーブル
-         1. campaignName列
-         2. milestoneName列
-         3. toDoName列
-         4. toDoTypeName列
-         5. scheduledExecutionTime列
-         6. estimatedExecutionalDuration列
-         7. scheduledResttimeDuration列
-         8. deadlineDateAndTime列
-         9. actualBeginningTime列
-         10. actualFinishTime列
-         11. priority列
-         12. scheduledExecutionDate列
-         13. done列
-         14. edit列
-         15. duplicate列
-         16. delete列"
